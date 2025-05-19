@@ -1,55 +1,79 @@
+<!DOCTYPE html>
 <html lang="id">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>ResepIN</title>
-
-  <link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResepIN - Aplikasi Resep Makanan</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <header>
+        <div class="container">
+            <h1>ResepIN</h1>
+            <p class="tagline">Temukan resep makanan favoritmu</p>
+        </div>
+    </header>
 
-<header>
+    <main class="container">
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Cari resep...">
+                <button id="search-btn">Cari</button>
+            </div>
+            <div class="ingredients-filter">
+                <input type="text" id="ingredient-input" placeholder="Tambahkan bahan...">
+                <button id="add-ingredient-btn">Tambah</button>
+                <div class="ingredients-tags" id="ingredients-tags"></div>
+            </div>
+        </section>
 
-  <h1>ResepIN</h1>
+        <!-- Control Buttons -->
+        <section class="control-section">
+            <button id="filter-btn">Filter Bahan</button>
+            <button id="reset-btn">Reset</button>
+            <button id="show-favorites-btn">Favorit</button>
+        </section>
 
-  <p>Cari dan simpan resep favoritmu!</p>
+        <!-- Main Content Area -->
+        <section class="content-section">
+            <!-- Default View -->
+            <div class="main-header">
+                <h2>Resep Terbaru</h2>
+            </div>
+            
+            <!-- Sub Menu Header -->
+            <div class="submenu-header hidden">
+                <button class="back-btn">&leftarrow; Kembali</button>
+                <h2 class="submenu-title"></h2>
+                <div class="submenu-info"></div>
+            </div>
 
-</header>
+            <!-- Recipes Container -->
+            <div class="recipes-container" id="recipes-container"></div>
+        </section>
+    </main>
 
-<div class="container">
+    <!-- Recipe Modal -->
+    <div class="modal" id="recipe-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" src="" alt="">
+            <div class="modal-body">
+                <div class="ingredients-section">
+                    <h3>Bahan-bahan</h3>
+                    <ul id="modal-ingredients"></ul>
+                </div>
+                <div class="steps-section">
+                    <h3>Langkah-langkah</h3>
+                    <ol id="modal-steps"></ol>
+                </div>
+            </div>
+            <button id="favorite-btn">Tambahkan ke Favorit</button>
+        </div>
+    </div>
 
-  <div class="search-section">
-
-    <h2>Cari Resep</h2>
-
-    <input type="text" id="searchInput" placeholder="Contoh: Nasi goreng, ayam bakar...">
-
-  </div>
-
-  <div class="ingredient-section">
-
-    <h2>Tentukan Bahan yang Dimiliki</h2>
-
-    <input type="text" id="ingredientInput" placeholder="Contoh: Telur, cabai, bawang merah...">
-
-  </div>
-
-  <div class="recipes" id="recipeList">
-
-    <!-- Resep akan dimuat lewat JavaScript -->
-
-  </div>
-
-</div>
-
-<script src="script.js"></script>
-
+    <script src="mbuh.js"></script>
 </body>
-
 </html>
